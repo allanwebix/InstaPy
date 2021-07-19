@@ -841,7 +841,7 @@ def get_tags(browser, url):
 def get_links(browser, page, logger, media, element):
     links = []
     post_href = None
-
+    logger.info("test................................................................")
     try:
         # Get image links in scope from hashtag, location and other pages
         link_elems = element.find_elements_by_xpath('//a[starts-with(@href, "/p/")]')
@@ -864,7 +864,7 @@ def get_links(browser, page, logger, media, element):
                         post_category = element.find_element_by_xpath(
                             "//a[@href='/p/"
                             + post_href.split("/")[-2]
-                            + "/']/child::div[@class='u7YqG']/child::div/*[name()='svg']"
+                            + "/']/child::div[@class='u7YqG']/child::div"
                         ).get_attribute("aria-label")
 
                         if post_category in media:
